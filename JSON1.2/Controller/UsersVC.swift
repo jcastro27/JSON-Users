@@ -45,13 +45,16 @@ extension UsersVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
-        cell.textLabel?.text = "Name: " + arr[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CellInformation
+        cell?.lbl?.text = "Name: " + arr[indexPath.row].name
+        cell?.email?.text = "Email: " + arr[indexPath.row].email
+        cell?.address?.text = "Address: " + arr[indexPath.row].address.city + " " + arr[indexPath.row].address.zipcode
+        cell?.companyName?.text = "Company: " + arr[indexPath.row].company.name
         
         
 
 
-        return cell
+        return cell!
     }
 }
 

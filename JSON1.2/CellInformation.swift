@@ -8,7 +8,12 @@
 import UIKit
 
 class CellInformation: UITableViewCell {
-
+    @IBOutlet weak var lbl: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var companyName: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
